@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dash.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2>Dashboard</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#home" id="home-link">Home</a></li>
+                <li><a href="#profile" id="profile-link">Student Profile</a></li>
+                <li><a href="#report" id="report-link">Report</a></li>
+                <li><a href="#settings" id="settings-link">Settings</a></li>
+                <li><a href="#logout">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="main-content">
+            <section id="home-section">
+                <header>
+                    <h1>Welcome to the Dashboard</h1>
+                </header>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search...">
+                    <button id="search-button">Search</button>
+                </div>
+                <div class="content">
+                    <div class="student-counters">
+                        <div class="counter" id="total-students-counter">
+                            <h2>Total Students</h2>
+                            <p id="total-students">0</p>
+                        </div>
+                        <div class="counter" id="active-students-counter">
+                            <h2>Active Students</h2>
+                            <p id="active-students">0</p>
+                        </div>
+                        <div class="counter" id="failed-students-counter">
+                            <h2>Failed Students</h2>
+                            <p id="failed-students">0</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="profile-section" class="hidden">
+                <table id="profile-table" border="1" style="border-color: #4682B4;">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Student Name</th>
+                            <th>Age</th>
+                            <th>Course</th>
+                            <th>Status</th>
+                            <th>Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table rows will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="report-section" class="hidden">
+                <header>
+                    <h1>Student Report</h1>
+                </header>
+                <div class="main-content">
+                    <div class="search-container">
+                        <input type="text" id="search-input" placeholder="Search by Name">
+                        <button id="search-button">Search</button>
+                    </div>
+                    <table id="report-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Full Name</th>
+                                <th>Age</th>
+                                <th>Course</th>
+                                <th>Status</th>
+                                <th>Actions</th> <!-- New column for Actions -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Report data will be dynamically populated here -->
+                        </tbody>
+                    </table>
+                    <div class="actions">
+                        <button id="print-pdf">Print PDF</button> <!-- Button moved inside .actions -->
+                    </div>
+                </div>
+            </section>
+
+            <section id="settings-section" class="hidden">
+                <table id="settings-table" border="1" style="border-color: #4682B4;">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Student Name</th>
+                            <th>Username</th>
+                            <th>Password</th>
+                            <th>Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table rows will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
